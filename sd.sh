@@ -188,13 +188,17 @@ function Recover() {
 function Empty() {
     ans=''
     read -p 'Would you want to empty the trash? (y/N): ' ans
-    case $ans in
-        y);&
-        Y)
-            rm -rf $TRASH_PATH/files/*
-            rm -rf $TRASH_PATH/info/*
-            ;;
-    esac
+    if [ $ans == "y" ] || [ $ans == "Y" ]; then
+        rm -rf $TRASH_PATH/files/*
+        rm -rf $TRASH_PATH/info/*
+    fi
+    # case $ans in
+    #     y);&
+    #     Y)
+    #         rm -rf $TRASH_PATH/files/*
+    #         rm -rf $TRASH_PATH/info/*
+    #         ;;
+    # esac
 }
 
 if [ $# -ge 1 ]; then
@@ -207,7 +211,8 @@ if [ $# -ge 1 ]; then
                 exit 1
             fi
             Remove $2;;
-        -\?);&
+        -\?)
+            Info;;
         --help)
             Info;;
         -D)
