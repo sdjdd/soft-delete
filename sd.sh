@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 TRASH_PATH="$HOME/trash" # trash path
 TRASH_FILES_PATH="$TRASH_PATH/files"
