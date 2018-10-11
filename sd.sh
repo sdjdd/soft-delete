@@ -20,11 +20,11 @@ function Info() {
     echo "Usage: $0 [FILE]"
     echo "   or: $0 [OPTION] [FILE]"
     echo
-    echo "  -d            delete file in the trash"
-    echo "  -D            empty the trash"
-    echo "  -h -? --help  show this message and exit"
-    echo "  -l            list files in the trash"
-    echo "  -r            recover file"
+    echo "  -d         delete file in the trash"
+    echo "  -D         empty the trash"
+    echo "  -h --help  show this message and exit"
+    echo "  -l         list files in the trash"
+    echo "  -r         recover file"
 }
 
 # format datetime string
@@ -211,8 +211,7 @@ if [ $# -ge 1 ]; then
                 exit 1
             fi
             Remove $2;;
-        -\?)
-            Info;;
+        -h);&
         --help)
             Info;;
         -D)
